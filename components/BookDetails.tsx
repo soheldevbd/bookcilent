@@ -49,7 +49,7 @@ export default function BookDetails({ id }: { id: string }) {
         <div className="md:col-span-2">
           <div className="overflow-hidden rounded-box border border-base-300 bg-base-200 shadow-sm">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={book.image} alt={book.title} className="aspect-[3/4] w-full object-cover" />
+            <img src={book.image} alt={book.title} className="aspect-3/4 w-full object-cover" />
           </div>
         </div>
 

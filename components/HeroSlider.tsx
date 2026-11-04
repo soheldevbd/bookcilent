@@ -38,7 +38,7 @@ export default function HeroSlider() {
         pagination={{ clickable: true }}
         navigation
         loop
-        className="h-[28rem] md:h-[32rem]"
+        className="h-112 md:h-128"
       >
         {slides.map(({ title, text, Icon, bg }) => (
           <SwiperSlide key={title}>
