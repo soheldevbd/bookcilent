@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "booknook-light";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+  --color-base-100: oklch(98.6% 0.009 85);
+  --color-base-200: oklch(95.6% 0.016 85);
+  --color-base-300: oklch(90.5% 0.024 80);
+  --color-base-content: oklch(27% 0.035 50);
+  --color-primary: oklch(42% 0.085 170);
+  --color-primary-content: oklch(97% 0.01 170);
+  --color-secondary: oklch(62% 0.14 50);
+  --color-secondary-content: oklch(98% 0.01 60);
+  --color-accent: oklch(78% 0.14 85);
+  --color-accent-content: oklch(28% 0.05 70);
+  --color-neutral: oklch(30% 0.035 50);
+  --color-neutral-content: oklch(96% 0.01 80);
+  --color-info: oklch(62% 0.12 235);
+  --color-info-content: oklch(98% 0.01 235);
+  --color-success: oklch(62% 0.15 155);
+  --color-success-content: oklch(98% 0.01 155);
+  --color-warning: oklch(80% 0.15 80);
+  --color-warning-content: oklch(28% 0.06 80);
+  --color-error: oklch(58% 0.2 25);
+  --color-error-content: oklch(98% 0.01 25);
+  --radius-selector: 0.75rem;
+  --radius-field: 0.6rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "booknook-dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: oklch(21% 0.02 60);
+  --color-base-200: oklch(18.5% 0.02 60);
+  --color-base-300: oklch(30% 0.025 60);
+  --color-base-content: oklch(93% 0.015 80);
+  --color-primary: oklch(74% 0.12 170);
+  --color-primary-content: oklch(20% 0.04 170);
+  --color-secondary: oklch(72% 0.13 55);
+  --color-secondary-content: oklch(22% 0.04 55);
+  --color-accent: oklch(80% 0.13 85);
+  --color-accent-content: oklch(25% 0.05 80);
+  --color-neutral: oklch(27% 0.025 60);
+  --color-neutral-content: oklch(93% 0.015 80);
+  --color-info: oklch(72% 0.11 235);
+  --color-info-content: oklch(20% 0.04 235);
+  --color-success: oklch(72% 0.14 155);
+  --color-success-content: oklch(20% 0.04 155);
+  --color-warning: oklch(82% 0.14 85);
+  --color-warning-content: oklch(25% 0.05 80);
+  --color-error: oklch(68% 0.18 25);
+  --color-error-content: oklch(20% 0.05 25);
+  --radius-selector: 0.75rem;
+  --radius-field: 0.6rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+/* One heading style for every section */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-base-content);
+}
+
+.section-sub {
+  margin-top: 0.5rem;
+  max-width: 40rem;
+  line-height: 1.7;
+  color: color-mix(in oklab, var(--color-base-content) 70%, transparent);
+}
+
+.page-wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .page-wrap {
+    padding-inline: 1.5rem;
+  }
+}
