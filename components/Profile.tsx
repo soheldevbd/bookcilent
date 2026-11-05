@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { authClient } from "@/lib/auth-client";
-import Spinner from "./Spinner";
+import { authClient } from '@/lib/auth-client';
+import Spinner from './Spinner';
 
 export default function Profile() {
   const { data: session, isPending } = authClient.useSession();
@@ -15,7 +15,10 @@ export default function Profile() {
           <div className="w-28 rounded-full ring ring-primary ring-offset-4 ring-offset-base-100">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={user.image || `https://ui-avatars.com/api/?background=2f6f62&color=fff&name=${encodeURIComponent(user.name)}`}
+              src={
+                user.image ||
+                `https://ui-avatars.com/api/?background=2f6f62&color=fff&name=${encodeURIComponent(user.name)}`
+              }
               alt={user.name}
               referrerPolicy="no-referrer"
             />
