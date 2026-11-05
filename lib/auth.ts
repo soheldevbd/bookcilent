@@ -1,13 +1,17 @@
-import { betterAuth } from "better-auth";
-import { mongodbAdapter } from "better-auth/adapters/mongodb";
-import { nextCookies } from "better-auth/next-js";
-import { jwt } from "better-auth/plugins";
-import { MongoClient } from "mongodb";
+import { betterAuth } from 'better-auth';
+import { mongodbAdapter } from 'better-auth/adapters/mongodb';
+import { nextCookies } from 'better-auth/next-js';
+import { jwt } from 'better-auth/plugins';
+import { MongoClient } from 'mongodb';
 
-const globalForMongo = globalThis as unknown as { _booknookMongo?: MongoClient };
+const globalForMongo = globalThis as unknown as {
+  _booknookMongo?: MongoClient;
+};
 
-const client = (globalForMongo._booknookMongo ??= new MongoClient(process.env.MONGODB_URI as string));
-const db = client.db(process.env.MONGODB_DB || "booknook");
+const client = (globalForMongo._booknookMongo ??= new MongoClient(
+  process.env.MONGODB_URI as string,
+));
+const db = client.db(process.env.MONGODB_DB || 'booknook');
 
 export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL,
@@ -26,7 +30,7 @@ export const auth = betterAuth({
   plugins: [
     jwt({
       jwt: {
-        expirationTime: "1h",
+        expirationTime: '1h',
         definePayload: ({ user }) => ({ email: user.email, name: user.name }),
       },
     }),
