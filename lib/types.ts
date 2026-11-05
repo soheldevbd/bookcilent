@@ -1,4 +1,10 @@
-export const CATEGORIES = ["Fiction", "Science", "History", "Kids", "Others"] as const;
+export const CATEGORIES = [
+  'Fiction',
+  'Science',
+  'History',
+  'Kids',
+  'Others',
+] as const;
 
 export interface Book {
   _id: string;
